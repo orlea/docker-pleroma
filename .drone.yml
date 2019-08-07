@@ -2,8 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-- name: pleroma  
-  image: orlea/pleroma
+- name: docker-build
   settings:
     repo: orlea/pleroma
     tags: latest
