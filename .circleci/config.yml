@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          command: docker build -t orlea/pleroma .
+      - run:
+          command: docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+      - run:
+          command: docker push orlea/pleroma
